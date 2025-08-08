@@ -8,6 +8,7 @@ struct CreateListView: View {
     @State private var selectedColor = "Зеленый"
     @State private var selectedCities = Set<String>()
     @State private var maxCitiesSelection = 5
+    @State private var maxSymbolsShortName = 7
     
     private let colors: [String: Color] = [
         "Красный": .red,
@@ -26,8 +27,13 @@ struct CreateListView: View {
                     TextField("Введите название", text: $name)
                 }
                 
-                Section(header: Text("Короткое название списка")) {
+                Section(header: Text("Короткое название списка(макс.\(maxSymbolsShortName) символов)")) {
                     TextField("Введите короткое название", text: $shortListName)
+                        .onChange(of: shortListName) { oldValue, newValue in
+                            if newValue.count > maxSymbolsShortName {
+                                shortListName = String(newValue.prefix(maxSymbolsShortName))
+                            }
+                        }
                 }
                 
                 Section(header: Text("Цвет списка")) {

@@ -14,6 +14,7 @@ final class MainViewModel: ObservableObject {
         _ model: CityListModel
     ) {
         citiesLists.append(model)
+        currentList = model
     }
     
     func deleteCities(

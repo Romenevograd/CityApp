@@ -22,8 +22,8 @@ struct CityListModel: Hashable, Identifiable {
     }
     
     static let `default` = Self(
-        name: "По умолчанию",
-        shortListName: "Базовый",
+        name: "Полный список городов",
+        shortListName: "Полный",
         color: .mint,
         cities: [
             .init(name: "Москва", year: 1147),
@@ -32,7 +32,14 @@ struct CityListModel: Hashable, Identifiable {
             .init(name: "Вена", year: 1147),
             .init(name: "Берлин", year: 1237),
             .init(name: "Варшава", year: 1321),
-            .init(name: "Милан", year: 1899)
+            .init(name: "Оттава", year: 320),
+            .init(name: "Нью-Йорк", year: 420),
+            .init(name: "Лондон", year: 520),
+            .init(name: "Манчестер", year: 620),
+            .init(name: "Рим", year: 720),
+            .init(name: "Бразилиа", year: 820),
+            .init(name: "Токио", year: 920)
+
         ]
     )
 }
